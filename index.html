@@ -1,150 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Sharkie Active — Strength Has A New Bite</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Sharkie Active — Strength Has A New Bite</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap" rel="stylesheet">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Montserrat', sans-serif;
-    }
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Montserrat',sans-serif}
+body{background:#000;color:#fff}
 
-    body {
-      background: #000;
-      color: #fff;
-    }
+/* HEADER */
+header{
+  position:fixed;top:0;width:100%;
+  background:rgba(0,0,0,0.9);
+  padding:20px 60px;
+  display:flex;justify-content:space-between;align-items:center;
+  z-index:1000
+}
+.logo{font-weight:700;letter-spacing:4px}
+nav a{color:#fff;text-decoration:none;margin-left:30px;font-size:14px;opacity:.7}
+nav a:hover{opacity:1}
 
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(0,0,0,0.9);
-      padding: 20px 60px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 1000;
-    }
+/* HERO */
+.hero{
+  height:100vh;
+  background:radial-gradient(circle at top,#1a1a1a,#000);
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;padding:40px
+}
+.hero h1{font-size:64px;font-weight:900;letter-spacing:3px}
+.hero h2{font-size:22px;margin-top:20px;opacity:.8}
+.hero button{
+  margin-top:40px;padding:16px 50px;border:none;
+  background:#ff1e1e;color:white;font-weight:700;
+  border-radius:40px;cursor:pointer;transition:.3s
+}
+.hero button:hover{background:white;color:black}
 
-    header .logo {
-      font-weight: 700;
-      letter-spacing: 4px;
-      font-size: 18px;
-    }
+/* SECTIONS */
+section{padding:140px 60px;text-align:center}
+h2{font-size:48px;margin-bottom:20px}
+.red{color:#ff1e1e}
+p{opacity:.7;font-size:18px}
 
-    header nav a {
-      color: #fff;
-      text-decoration: none;
-      margin-left: 30px;
-      font-size: 14px;
-      opacity: 0.8;
-    }
+/* COLLECTION */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:50px;
+  max-width:1200px;
+  margin:80px auto 0
+}
+.card{
+  background:#0d0d0d;
+  padding:20px;border-radius:20px;
+  transition:.4s
+}
+.card:hover{transform:translateY(-10px)}
+.card img{width:100%;border-radius:16px}
+.card h3{margin-top:20px}
 
-    header nav a:hover {
-      opacity: 1;
-    }
+/* STORY */
+.story{
+  background:#0d0d0d;
+  padding:140px 60px
+}
 
-    .hero {
-      height: 100vh;
-      background: radial-gradient(circle at top, #1a1a1a, #000);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 40px;
-    }
+/* GALLERY */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:20px;
+  max-width:1200px;
+  margin:80px auto 0
+}
+.gallery img{width:100%;border-radius:12px}
 
-    .hero h1 {
-      font-size: 64px;
-      font-weight: 900;
-      letter-spacing: 2px;
-    }
+/* CONTACT */
+.contact{
+  max-width:800px;
+  margin:auto
+}
+.contact input,.contact textarea{
+  width:100%;padding:14px;margin:10px 0;
+  border:none;border-radius:10px
+}
+.contact button{
+  margin-top:20px;padding:14px 40px;
+  border:none;background:#ff1e1e;
+  color:white;font-weight:700;border-radius:30px
+}
 
-    .hero h2 {
-      font-size: 22px;
-      margin-top: 20px;
-      font-weight: 300;
-      opacity: 0.8;
-    }
+/* FOOTER */
+footer{
+  padding:80px 40px;
+  text-align:center;
+  border-top:1px solid #111
+}
+footer h2{letter-spacing:4px;margin-bottom:20px}
+footer p{opacity:.5;font-size:14px}
 
-    .hero button {
-      margin-top: 40px;
-      padding: 16px 50px;
-      border: none;
-      border-radius: 50px;
-      background: #ff1e1e;
-      color: white;
-      font-size: 16px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .hero button:hover {
-      background: white;
-      color: black;
-    }
-
-    .collection {
-      padding: 140px 60px;
-      text-align: center;
-    }
-
-    .collection h2 {
-      font-size: 48px;
-      margin-bottom: 20px;
-    }
-
-    .collection span {
-      color: #ff1e1e;
-    }
-
-    .collection p {
-      opacity: 0.7;
-      margin-bottom: 80px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 50px;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .card img {
-      width: 100%;
-      border-radius: 20px;
-    }
-
-    .card h3 {
-      margin-top: 20px;
-      font-size: 18px;
-    }
-
-    footer {
-      padding: 80px 40px;
-      text-align: center;
-      background: #000;
-      border-top: 1px solid #111;
-    }
-
-    footer h2 {
-      letter-spacing: 4px;
-      margin-bottom: 20px;
-    }
-
-    footer p {
-      opacity: 0.6;
-      font-size: 14px;
-    }
-  </style>
+/* MOBILE */
+@media(max-width:768px){
+  header{padding:20px}
+  section{padding:120px 20px}
+  .hero h1{font-size:42px}
+  h2{font-size:36px}
+}
+</style>
 </head>
 
 <body>
@@ -152,22 +117,32 @@
 <header>
   <div class="logo">SHARKIE ACTIVE</div>
   <nav>
-    <a href="#">About</a>
-    <a href="#">Collection</a>
-    <a href="#">Contact</a>
+    <a href="#story">Story</a>
+    <a href="#collection">Collection</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
   </nav>
 </header>
 
+<!-- HERO -->
 <section class="hero">
   <div>
     <h1>SHARKIE ACTIVE</h1>
     <h2>Strength has a new bite</h2>
-    <button>Shop The Collection</button>
+    <button>Join The Pack</button>
   </div>
 </section>
 
-<section class="collection">
-  <h2>The <span>Collection</span></h2>
+<!-- STORY -->
+<section id="story" class="story">
+  <h2>Built for the <span class="red">Relentless</span></h2>
+  <p>Sharkie Active was created for athletes who train with intent.  
+  No excuses. No shortcuts. Just discipline, movement, and power.</p>
+</section>
+
+<!-- COLLECTION -->
+<section id="collection">
+  <h2>The <span class="red">Collection</span></h2>
   <p>Designed to move. Built to dominate.</p>
 
   <div class="grid">
@@ -188,6 +163,32 @@
   </div>
 </section>
 
+<!-- GALLERY -->
+<section id="gallery">
+  <h2>The <span class="red">Movement</span></h2>
+  <p>Follow the journey. Join the pack.</p>
+
+  <div class="gallery">
+    <img src="sharkie1.png">
+    <img src="sharkie2.png">
+    <img src="sharkie3.png">
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Join the <span class="red">Pack</span></h2>
+  <p>Be the first to know when Sharkie Active drops.</p>
+
+  <div class="contact">
+    <input type="text" placeholder="Name">
+    <input type="email" placeholder="Email">
+    <textarea rows="4" placeholder="Message"></textarea>
+    <button>Send</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
   <h2>SHARKIE ACTIVE</h2>
   <p>Strength has a new bite</p>
