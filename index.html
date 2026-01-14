@@ -1,112 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Sharkie Active — Strength Has A New Bite</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Sharkie Active — Strength Has A New Bite</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap" rel="stylesheet">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap" rel="stylesheet">
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Montserrat',sans-serif}
-body{background:#000;color:#f5f5f5;overflow-x:hidden}
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
 
-/* Header */
-header{
-  position:fixed;top:0;left:0;width:100%;z-index:100;
-  background:rgba(0,0,0,0.85);backdrop-filter:blur(10px)
-}
-nav{max-width:1200px;margin:auto;display:flex;justify-content:space-between;align-items:center;padding:20px}
-nav span{font-weight:700;letter-spacing:4px}
-nav a{color:#f5f5f5;text-decoration:none;margin-left:30px;font-size:14px}
+    body {
+      background: #000;
+      color: #f5f5f5;
+    }
 
-/* Hero */
-.hero{
-  height:100vh;display:flex;align-items:center;justify-content:center;
-  background:radial-gradient(circle at top,#1a1a1a,#000);
-  text-align:center;padding:40px
-}
-.hero h1{font-size:4rem;font-weight:900;letter-spacing:4px}
-.hero span{color:#ff1e1e}
-.hero p{margin-top:20px;font-size:1.2rem;opacity:.85}
-.hero button{
-  margin-top:40px;padding:14px 40px;border:none;
-  background:#ff1e1e;color:white;font-weight:700;cursor:pointer;
-  transition:.3s
-}
-.hero button:hover{background:#c4161c;transform:scale(1.05)}
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(10px);
+      z-index: 100;
+    }
 
-/* Sections */
-section{padding:120px 10%;text-align:center}
-.dark{background:#0d0d0d}
-h2{font-size:2.5rem;margin-bottom:20px}
-.red{color:#ff1e1e}
+    nav {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+    }
 
-/* Image Grid */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:40px;margin-top:60px
-}
-.grid img{
-  width:100%;
-  border-radius:16px;
-  transition:.5s;
-  opacity:0;
-  transform:translateY(60px)
-}
-.grid img:hover{transform:scale(1.04)}
+    nav span {
+      font-weight: 700;
+      letter-spacing: 4px;
+    }
 
-/* Footer */
-footer{background:#000;padding:80px 10%;text-align:center;opacity:.8}
+    nav a {
+      color: #f5f5f5;
+      text-decoration: none;
+      margin-left: 30px;
+      font-size: 14px;
+    }
 
-/* Animations */
-.reveal{opacity:1!important;transform:translateY(0)!important;transition:1s}
-/* Product Grid */
-.product-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:40px;
-  margin-top:60px;
-}
+    /* Sections */
+    section {
+      padding: 120px 20px;
+      max-width: 1200px;
+      margin: auto;
+      text-align: center;
+    }
 
-.product-card{
-  background:#111;
-  padding:30px;
-  border-radius:20px;
-  text-align:center;
-  transition:0.4s ease;
-  transform:translateY(30px);
-  opacity:0;
-}
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at top, #1a1a1a, #000);
+    }
 
-.product-card.reveal{
-  transform:translateY(0);
-  opacity:1;
-}
+    h1 {
+      font-size: 60px;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
 
-.product-card img{
-  width:100%;
-  border-radius:16px;
-  margin-bottom:20px;
-  transition:0.4s ease;
-}
+    h2 {
+      font-size: 48px;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
 
-.product-card:hover img{
-  transform:scale(1.05);
-}
+    .red {
+      color: #ff1e1e;
+    }
 
-.product-card h3{
-  font-size:20px;
-  margin-bottom:8px;
-}
+    p {
+      font-size: 18px;
+      color: #ccc;
+    }
 
-.product-card p{
-  color:#aaa;
-  font-size:14px;
-}
+    /* Product Grid */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+      margin-top: 60px;
+    }
 
-</style>
+    .product-card {
+      background: #0f0f0f;
+      padding: 20px;
+      border-radius: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(255,30,30,0.15);
+    }
+
+    .product-card img {
+      width: 100%;
+      border-radius: 15px;
+      margin-bottom: 20px;
+    }
+
+    .product-card h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .product-card p {
+      font-size: 14px;
+      color: #aaa;
+    }
+
+    footer {
+      padding: 80px 20px;
+      text-align: center;
+      background: #000;
+    }
+
+    footer h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    footer p {
+      color: #777;
+      margin-top: 10px;
+    }
+
+    @media(max-width:768px){
+      h1 { font-size: 42px; }
+      h2 { font-size: 36px; }
+    }
+  </style>
 </head>
 
 <body>
@@ -122,42 +161,25 @@ footer{background:#000;padding:80px 10%;text-align:center;opacity:.8}
   </nav>
 </header>
 
-<div class="product-grid">
-
-  <div class="product-card">
-    <img src="sharkie1.png" alt="Sharkie Active Top">
-    <h3>Performance Compression</h3>
-    <p>Built for strength and speed</p>
+<section class="hero">
+  <div>
+    <h1>SHARKIE <span class="red">ACTIVE</span></h1>
+    <p style="margin-top:20px;">Strength has a new bite</p>
   </div>
-
-  <div class="product-card">
-    <img src="sharkie2.png" alt="Sharkie Active Tank">
-    <h3>Training Tank</h3>
-    <p>Lightweight. Breathable.</p>
-  </div>
-
-  <div class="product-card">
-    <img src="sharkie3.png" alt="Sharkie Active Compression">
-    <h3>Power Tee</h3>
-    <p>Engineered for dominance</p>
-  </div>
-
-</div>
-
+</section>
 
 <section>
   <h2>Built for the <span class="red">Relentless</span></h2>
   <p>Performance wear engineered for athletes who train with intent.</p>
 </section>
 
-<section class="dark">
+<section>
   <h2>The <span class="red">Collection</span></h2>
   <p>Designed to move. Built to dominate.</p>
 
   <div class="product-grid">
-
     <div class="product-card">
-      <img src="sharkie1.png" alt="Sharkie Compression Long Sleeve">
+      <img src="sharkie1.png" alt="Sharkie Compression Top">
       <h3>Predator Compression</h3>
       <p>Performance Series</p>
     </div>
@@ -173,10 +195,8 @@ footer{background:#000;padding:80px 10%;text-align:center;opacity:.8}
       <h3>Velocity Active Set</h3>
       <p>Signature Series</p>
     </div>
-
   </div>
 </section>
-
 
 <section>
   <h2>Train like a <span class="red">Predator</span></h2>
@@ -186,20 +206,8 @@ footer{background:#000;padding:80px 10%;text-align:center;opacity:.8}
 <footer>
   <h2>SHARKIE ACTIVE</h2>
   <p>Strength has a new bite</p>
-  <p style="margin-top:20px;">© 2026 Sharkie Active</p>
+  <p>© 2026 Sharkie Active</p>
 </footer>
-
-<script>
-const images=document.querySelectorAll('.grid img');
-const observer=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add('reveal');
-    }
-  });
-},{threshold:.3});
-images.forEach(img=>observer.observe(img));
-</script>
 
 </body>
 </html>
