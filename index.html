@@ -42,20 +42,20 @@ section{padding:120px 10%;text-align:center}
 h2{font-size:2.5rem;margin-bottom:20px}
 .red{color:#ff1e1e}
 
-/* Products */
-.products{
+/* Image Grid */
+.grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
   gap:40px;margin-top:60px
 }
-.card{
-  background:#111;border-radius:14px;padding:20px;
-  transition:.4s;opacity:0;transform:translateY(60px)
+.grid img{
+  width:100%;
+  border-radius:16px;
+  transition:.5s;
+  opacity:0;
+  transform:translateY(60px)
 }
-.card img{width:100%;border-radius:12px;margin-bottom:20px}
-.card:hover{transform:translateY(-10px) scale(1.02)}
-.card h3{margin-bottom:8px}
-.card p{opacity:.7}
+.grid img:hover{transform:scale(1.04)}
 
 /* Footer */
 footer{background:#000;padding:80px 10%;text-align:center;opacity:.8}
@@ -71,9 +71,9 @@ footer{background:#000;padding:80px 10%;text-align:center;opacity:.8}
   <nav>
     <span>SHARKIE ACTIVE</span>
     <div>
-      <a href="#">Women</a>
-      <a href="#">Men</a>
       <a href="#">About</a>
+      <a href="#">Collection</a>
+      <a href="#">Contact</a>
     </div>
   </nav>
 </header>
@@ -82,42 +82,23 @@ footer{background:#000;padding:80px 10%;text-align:center;opacity:.8}
   <div>
     <h1>SHARKIE <span>ACTIVE</span></h1>
     <p>Strength has a new bite</p>
-    <button>SHOP COMING SOON</button>
+    <button>FIRST DROP COMING SOON</button>
   </div>
 </div>
 
 <section>
   <h2>Built for the <span class="red">Relentless</span></h2>
-  <p>Elite performance wear for athletes who demand more.</p>
+  <p>Performance wear engineered for athletes who train with intent.</p>
 </section>
 
 <section class="dark">
-  <h2>Shop the <span class="red">Collection</span></h2>
+  <h2>The <span class="red">Collection</span></h2>
+  <p>Designed to move. Built to dominate.</p>
 
-  <div class="products">
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07c">
-      <h3>Performance Leggings</h3>
-      <p>R799</p>
-    </div>
-
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1550345332-09e3ac987658">
-      <h3>Training Tee</h3>
-      <p>R499</p>
-    </div>
-
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1598970434795-0c54fe7c0648">
-      <h3>Compression Set</h3>
-      <p>R1299</p>
-    </div>
-
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1599058917700-9fdf2b68d79b">
-      <h3>Gym Hoodie</h3>
-      <p>R999</p>
-    </div>
+  <div class="grid">
+    <img src="https://raw.githubusercontent.com/kkethcronje-png/sharkie-active-sites/main/images/sharkie1.png">
+    <img src="https://raw.githubusercontent.com/kkethcronje-png/sharkie-active-sites/main/images/sharkie2.png">
+    <img src="https://raw.githubusercontent.com/kkethcronje-png/sharkie-active-sites/main/images/sharkie3.png">
   </div>
 </section>
 
@@ -133,7 +114,7 @@ footer{background:#000;padding:80px 10%;text-align:center;opacity:.8}
 </footer>
 
 <script>
-const cards=document.querySelectorAll('.card');
+const images=document.querySelectorAll('.grid img');
 const observer=new IntersectionObserver(entries=>{
   entries.forEach(entry=>{
     if(entry.isIntersecting){
@@ -141,7 +122,7 @@ const observer=new IntersectionObserver(entries=>{
     }
   });
 },{threshold:.3});
-cards.forEach(card=>observer.observe(card));
+images.forEach(img=>observer.observe(img));
 </script>
 
 </body>
